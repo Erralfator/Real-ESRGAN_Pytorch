@@ -14,17 +14,21 @@ Real-ESRGAN is an upgraded [ESRGAN](https://arxiv.org/abs/1809.00219) trained wi
 - [Pytorch Original implementation](https://github.com/ai-forever/Real-ESRGAN)
 - [Huggingface Page Models 🤗](https://huggingface.co/sberbank-ai/Real-ESRGAN)
 
-## Installation
 
-```bash
-pip install git+https://github.com/Nick088/Real-ESRGAN_Pytorch.git
-```
 
 ## Usage
 
 ---
 
-### Basic Python Usage:
+### Basic Python Local Usage:
+
+##### Installation
+
+```bash
+pip install git+https://github.com/Nick088/Real-ESRGAN_Pytorch.git
+```
+
+#### Inference
 
 ```python
 import torch
@@ -49,14 +53,16 @@ sr_image.save('results/sr_image.png')
 
 ### Online Usage:
 
-- Google Colab No UI <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/Real-ESRGAN_Pytorch/blob/main/Real_ESRGAN_Pytorch_Inference_NO_UI.ipynb">
+#### Google Colab:
+- No UI <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/Real-ESRGAN_Pytorch/blob/main/Real_ESRGAN_Pytorch_Inference_NO_UI.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-- Google Colab UI **(WARNING: COULD RISK YOUR COLAB FREE TIER)** <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/Real-ESRGAN_Pytorch/blob/main/Real_ESRGAN_Pytorch_Inference_UI.ipynb">
+- UI **(WARNING: COULD RISK YOUR COLAB FREE TIER)** <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/Real-ESRGAN_Pytorch/blob/main/Real_ESRGAN_Pytorch_Inference_UI.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
+#### Hugging Face Space:
 - [Huggingface Space🤗](https://huggingface.co/spaces/Nick088/Real-ESRGAN_Pytorch)
 
 
