@@ -14,7 +14,37 @@ Real-ESRGAN is an upgraded [ESRGAN](https://arxiv.org/abs/1809.00219) trained wi
 - [Pytorch Original implementation](https://github.com/ai-forever/Real-ESRGAN)
 - [Huggingface Page Models 🤗](https://huggingface.co/sberbank-ai/Real-ESRGAN)
 
+## Examples
 
+---
+
+Low quality image:
+
+![](inputs/lr_image.png)
+
+Real-ESRGAN result:
+
+![](results/sr_image.png)
+
+---
+
+Low quality image:
+
+![](inputs/lr_face.png)
+
+Real-ESRGAN result:
+
+![](results/sr_face.png)
+
+---
+
+Low quality image:
+
+![](inputs/lr_lion.png)
+
+Real-ESRGAN result:
+
+![](results/sr_lion.png)
 
 ## Usage
 
@@ -28,7 +58,7 @@ Real-ESRGAN is an upgraded [ESRGAN](https://arxiv.org/abs/1809.00219) trained wi
 pip install git+https://github.com/Nick088/Real-ESRGAN_Pytorch.git
 ```
 
-#### Inference
+##### Inference
 
 ```python
 import torch
@@ -64,36 +94,3 @@ sr_image.save('results/sr_image.png')
 
 #### Hugging Face Space:
 - [Huggingface Space🤗](https://huggingface.co/spaces/Nick088/Real-ESRGAN_Pytorch)
-
-
-## Examples
-
----
-
-Low quality image:
-
-![](inputs/lr_image.png)
-
-Real-ESRGAN result:
-
-![](results/sr_image.png)
-
----
-
-Low quality image:
-
-![](inputs/lr_face.png)
-
-Real-ESRGAN result:
-
-![](results/sr_face.png)
-
----
-
-Low quality image:
-
-![](inputs/lr_lion.png)
-
-Real-ESRGAN result:
-
-![](results/sr_lion.png)
