@@ -2,6 +2,13 @@ import gradio as gr
 
 from infer import infer_image, infer_video
 
+if torch.cuda.is_available():
+    device = "cuda"
+    print("Using GPU")
+else:
+    device = "cpu"
+    print("Using CPU")
+
 input_image = gr.Image(type='pil', label='Input Image')
 input_model_image = gr.Radio([('x2', 2), ('x4', 4), ('x8', 8)], type="value", value=4, label="Model Upscale/Enhance Type")
 submit_image_button = gr.Button('Submit')
