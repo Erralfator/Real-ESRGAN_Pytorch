@@ -82,6 +82,13 @@ sr_image = model.predict(image)
 sr_image.save('results/sr_image.png')
 ```
 
+### Precompiled:
+
+1. Click Code and Download as Zip.
+2. Open Run_Inference_UI.bat.
+3. After it installs the dependencies, let it run and do Ctrl+Click on Local URL.
+4. Now either for Image Tab or Video Tab, just upload your input, select the Upscale Model (x2, x4, x8) and Submit!
+
 ---
 
 ### Online Usage:
