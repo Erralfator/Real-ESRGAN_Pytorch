@@ -1,6 +1,6 @@
 import gradio as gr
 
-from infer_UI import infer_image, infer_video
+from Infer_UI import infer_image, infer_video
 
 if torch.cuda.is_available():
     device = "cuda"
