@@ -20,7 +20,7 @@ def infer_image(img: Image.Image, size_modifier: int ) -> Image.Image:
         raise Exception("The image is too large.")
 
     model = RealESRGAN(device, scale=size_modifier)
-    model.load_weights(f'weights/RealESRGAN_x{size_modifier}.pth', download=False)
+    model.load_weights(f'weights/RealESRGAN_x{size_modifier}.pth', download=True)
 
     result = model.predict(img.convert('RGB'))
     print(f"Image size ({device}): {size_modifier} ... OK")
@@ -28,7 +28,7 @@ def infer_image(img: Image.Image, size_modifier: int ) -> Image.Image:
 
 def infer_video(video_filepath: str, size_modifier: int) -> str:
     model = RealESRGAN(device, scale=size_modifier)
-    model.load_weights(f'weights/RealESRGAN_x{size_modifier}.pth', download=False)
+    model.load_weights(f'weights/RealESRGAN_x{size_modifier}.pth', download=True)
 
     cap = cv.VideoCapture(video_filepath)
     
