@@ -15,7 +15,7 @@ Real-ESRGAN is an upgraded [ESRGAN](https://arxiv.org/abs/1809.00219) trained wi
 - [Paper (Real-ESRGAN: Training Real-World Blind Super-Resolution with Pure Synthetic Data)](https://arxiv.org/abs/2107.10833)
 - [Original implementation](https://github.com/xinntao/Real-ESRGAN)
 - [Pytorch Original implementation](https://github.com/ai-forever/Real-ESRGAN)
-- [Huggingface Page Models 🤗](https://huggingface.co/sberbank-ai/Real-ESRGAN)
+- [Huggingface Page Models 🤗](https://huggingface.co/ai-forever/Real-ESRGAN)
 
 ## Examples
 
@@ -104,3 +104,18 @@ sr_image.save('results/sr_image.png')
 
 #### Hugging Face Space:
 - [Huggingface Space🤗](https://huggingface.co/spaces/Nick088/Real-ESRGAN_Pytorch)
+
+#### Kaggle:
+- [WEB UI **(WARNING: YOU COULD RISK YOUR KAGGLE ACCOUNT)** ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/code/nick088/real-esrgan-pytorch-inference-web-ui)
+
+### CHANGELOG
+#### Update - May 3rd, 2024
+Added web ui precompiled local, kaggle web ui notebook
+
+### Credits:
+- [Nick088](https://linktr.ee/Nick088) (improving and porting)
+- [forever-ai](https://huggingface.co/ai-forever/Real-ESRGAN) (making the pytorch implementation model of Real-ESRGAN)
+- Xinntao
+- Tencent
+- Geeve George (no ui inference video code)
+- daroche (fixing web ui video inference code)
