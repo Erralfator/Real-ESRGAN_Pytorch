@@ -1,5 +1,13 @@
-import gradio as gr
+import torch
 
+if torch.cuda.is_available():
+    device = "cuda"
+    print("Using GPU")
+else:
+    device = "cpu"
+    print("Using CPU")
+
+import gradio as gr
 from Infer_UI import infer_image, infer_video
 
 input_image = gr.Image(type='pil', label='Input Image')
