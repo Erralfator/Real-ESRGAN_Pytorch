@@ -1,5 +1,7 @@
 # Real-ESRGAN Pytorch
 
+# RIGHT NOW IN MAINTENANCE! GONNA UPDATE IT! IF U GOT ANY ERRORS, ITS BC OF THIS
+
 [![Discord](https://img.shields.io/discord/1198701940511617164?color=%23738ADB&label=Discord&style=for-the-badge)](https://discord.gg/osai)
 
 PyTorch implementation of a Real-ESRGAN model trained on custom dataset. This model shows better results on faces compared to the original version. It is also easier to integrate this model into your projects.
