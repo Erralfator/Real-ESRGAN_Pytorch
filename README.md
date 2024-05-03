@@ -98,7 +98,7 @@ sr_image.save('results/sr_image.png')
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-- UI **(WARNING: COULD RISK YOUR COLAB FREE TIER)** <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/Real-ESRGAN_Pytorch/blob/main/Real_ESRGAN_Pytorch_Inference_UI.ipynb">
+- WEB UI **(WARNING: COULD RISK YOUR COLAB FREE TIER)** <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/Real-ESRGAN_Pytorch/blob/main/Real_ESRGAN_Pytorch_Inference_WEB_UI.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
