@@ -33,10 +33,11 @@ REM Print the step to the terminal
 echo Running Python script...
 
 REM Ask the user for the image file name or 'ALL'
-set /p image_name="Enter the filename of the image/video (with extension) in the 'inputs' folder to upscale: "
+set "image_name="
+set /p "image_name=Enter the filename of the image/video (with extension) in the 'inputs' folder to upscale: "
 
 REM Set the image file path
-set image_path="%~dp0inputs\%image_name%"
+set "image_path=%~dp0inputs\%image_name%"
 
 REM Ask for the upscale factor
 set /p upscale_factor="Enter the upscale factor (2, 4, or 8): "
