@@ -1,7 +1,5 @@
 # Real-ESRGAN Pytorch
 
-# RIGHT NOW IN MAINTENANCE! GONNA UPDATE IT! IF U GOT ANY ERRORS, ITS BC OF THIS
-
 [![Discord](https://img.shields.io/discord/1198701940511617164?color=%23738ADB&label=Discord&style=for-the-badge)](https://discord.gg/osai)
 
 PyTorch implementation of a Real-ESRGAN model trained on custom dataset. This model shows better results on faces compared to the original version. It is also easier to integrate this model into your projects.
@@ -109,10 +107,14 @@ sr_image.save('results/sr_image.png')
 
 #### Kaggle:
 - [WEB UI **(WARNING: YOU COULD RISK YOUR KAGGLE ACCOUNT)** ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/code/nick088/real-esrgan-pytorch-inference-web-ui)
+- [NO UI ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/code/nick088/real-esrgan-pytorch-inference-no-ui)
+  
 
 ### CHANGELOG
 #### Update - May 3rd, 2024
-Added web ui precompiled local, kaggle web ui notebook
+Updated & Fixed the no ui version and added a kaggle notebook too, everything is fixed now.
+#### Update - May 3rd, 2024
+Added web ui precompiled local, kaggle web ui notebook.
 
 ### Credits:
 - [Nick088](https://linktr.ee/Nick088) (improving and porting)
