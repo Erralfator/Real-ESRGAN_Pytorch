@@ -7,6 +7,7 @@ import numpy as np
 import tqdm
 import ffmpeg
 import argparse
+import os
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -32,10 +33,9 @@ def infer_video(video_filepath: str, size_modifier: int) -> str:
 
     video_filepath = f"inputs/{video_filepath}"
     cap = cv.VideoCapture(video_filepath)
-    
-    tmpfile = tempfile.NamedTemporaryFile(suffix='.mp4', delete=False)
-    vid_output = tmpfile.name
-    tmpfile.close()
+
+    # Create an output file path in the "results" folder
+    output_filepath = f"results/{os.path.basename(video_filepath)}"
 
     # Check if the input video has an audio stream
     probe = ffmpeg.probe(video_filepath)
@@ -47,7 +47,7 @@ def infer_video(video_filepath: str, size_modifier: int) -> str:
         ffmpeg.input(video_filepath).output(audio_file, format='wav', ac=1).run(overwrite_output=True)
 
     vid_writer = cv.VideoWriter(
-        vid_output,
+        output_filepath,
         fourcc=cv.VideoWriter.fourcc(*'mp4v'),
         fps=cap.get(cv.CAP_PROP_FPS),
         frameSize=(int(cap.get(cv.CAP_PROP_FRAME_WIDTH)) * size_modifier, int(cap.get(cv.CAP_PROP_FRAME_HEIGHT)) * size_modifier)
@@ -74,28 +74,28 @@ def infer_video(video_filepath: str, size_modifier: int) -> str:
 
     if has_audio:
         # Re-encode the video with the modified audio
-        ffmpeg.input(vid_output).output(video_filepath.replace(".mp4", "_upscaled.mp4"), vcodec='libx264', acodec='aac', audio_bitrate='320k').run(overwrite_output=True)
+        ffmpeg.input(output_filepath).output(output_filepath, vcodec='libx264', acodec='aac', audio_bitrate='320k').run(overwrite_output=True)
 
         # Replace the original audio with the upscaled audio
-        ffmpeg.input(audio_file).output(video_filepath.replace(".mp4", "_upscaled.mp4"), acodec='aac', audio_bitrate='320k').run(overwrite_output=True)
+        ffmpeg.input(audio_file).output(output_filepath, acodec='aac', audio_bitrate='320k').run(overwrite_output=True)
 
-    print(f"Video file : {video_filepath}")
+    print(f"Video file : {output_filepath}")
 
-    return vid_output.replace(".mp4", "_upscaled.mp4") if has_audio else vid_output
+    return output_filepath
 
 def main():
     parser = argparse.ArgumentParser(description='Upscale an image or video using RealESRGAN.')
-    parser.add_argument('--path', type=str, help='Path to the image or video file.')
+    parser.add_argument('--file', type=str, help='filename of the image or video in the inputs folder.')
     parser.add_argument('--size', type=int, choices=[2, 4, 8], default=4, help='Upscale factor (2, 4, or 8). Default is 4.')
     args = parser.parse_args()
 
-    if args.path.endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')):
-        img = Image.open(args.path)
-        upscaled_img = infer_image(img, args.size)
-        upscaled_img.save(args.path.replace(".png", "_upscaled.png"), "PNG")
-        print(f"Upscaled image saved as: {args.path.replace('.png', '_upscaled.png')}")
-    elif args.path.endswith(('.mp4', '.avi', '.mov', '.wmv')):
-        upscaled_video = infer_video(args.path, args.size)
+    if args.file.endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')):
+        img = Image.open(args.file)
+        upscaled_img = infer_image(img, args.file)
+        upscaled_img.save(args.file.replace(".png", "_upscaled.png"), "PNG")
+        print(f"Upscaled image saved as: {args.file.replace('.png', '_upscaled.png')}")
+    elif args.file.endswith(('.mp4', '.avi', '.mov', '.wmv')):
+        upscaled_video = infer_video(args.file, args.size)
         print(f"Upscaled video saved as: {upscaled_video}")
     else:
         print("Error: Invalid file type. Only images (png, jpg, jpeg, bmp, gif) and videos (mp4, avi, mov, wmv) are supported.")
