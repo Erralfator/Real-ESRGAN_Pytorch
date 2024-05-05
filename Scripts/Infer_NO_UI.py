@@ -6,10 +6,9 @@ import tempfile
 import numpy as np
 import tqdm
 import ffmpeg
+import argparse
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-os.chdir(os.path.join(os.path.dirname(__file__), '..', 'inputs'))
 
 def infer_image(img: Image.Image, size_modifier: int ) -> Image.Image:
     if img is None:
@@ -31,6 +30,7 @@ def infer_video(video_filepath: str, size_modifier: int) -> str:
     model = RealESRGAN(device, scale=size_modifier)
     model.load_weights(f'weights/RealESRGAN_x{size_modifier}.pth', download=True)
 
+    video_filepath = f"inputs/{video_filepath}"
     cap = cv.VideoCapture(video_filepath)
     
     tmpfile = tempfile.NamedTemporaryFile(suffix='.mp4', delete=False)
@@ -82,3 +82,23 @@ def infer_video(video_filepath: str, size_modifier: int) -> str:
     print(f"Video file : {video_filepath}")
 
     return vid_output.replace(".mp4", "_upscaled.mp4") if has_audio else vid_output
+
+def main():
+    parser = argparse.ArgumentParser(description='Upscale an image or video using RealESRGAN.')
+    parser.add_argument('--path', type=str, help='Path to the image or video file.')
+    parser.add_argument('--size', type=int, choices=[2, 4, 8], default=4, help='Upscale factor (2, 4, or 8). Default is 4.')
+    args = parser.parse_args()
+
+    if args.path.endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')):
+        img = Image.open(args.path)
+        upscaled_img = infer_image(img, args.size)
+        upscaled_img.save(args.path.replace(".png", "_upscaled.png"), "PNG")
+        print(f"Upscaled image saved as: {args.path.replace('.png', '_upscaled.png')}")
+    elif args.path.endswith(('.mp4', '.avi', '.mov', '.wmv')):
+        upscaled_video = infer_video(args.path, args.size)
+        print(f"Upscaled video saved as: {upscaled_video}")
+    else:
+        print("Error: Invalid file type. Only images (png, jpg, jpeg, bmp, gif) and videos (mp4, avi, mov, wmv) are supported.")
+
+if __name__ == '__main__':
+    main()
