@@ -43,7 +43,7 @@ REM Ask for the upscale factor
 set /p upscale_factor="Enter the upscale factor (2, 4, or 8): "
 
 REM Run the Python script with the file path and upscale factor
-python "%~dp0Scripts\Infer_NO_UI.py" --path "%image_path%" --size "%upscale_factor%"
+python "%~dp0Scripts\Infer_NO_UI.py" --file "%image_path%" --size "%upscale_factor%"
 
 
 REM Print the step to the terminal
