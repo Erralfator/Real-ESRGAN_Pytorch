@@ -110,7 +110,7 @@ sr_image.save('results/sr_image.png')
 - [NO UI ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)](https://github.com/Nick088Official/Real-ESRGAN_Pytorch/blob/main/kaggle-real-esrgan-pytorch-inference-no-ui.ipynb)
 
 1. Download one of the 2 Kaggle Notebooks Files above
-2. Go on https://kaggle.com.
+2. Go on https://kaggle.com, be sure you make an account and are phone verified.
 3. Click the '+', then 'Create new notebook'.
 4. Click 'File' and 'Import Notebook'.
 5. Import the kaggle notebook file.
