@@ -106,11 +106,19 @@ sr_image.save('results/sr_image.png')
 - [Huggingface Space🤗](https://huggingface.co/spaces/Nick088/Real-ESRGAN_Pytorch)
 
 #### Kaggle:
-- [WEB UI **(WARNING: YOU COULD RISK YOUR KAGGLE ACCOUNT)** ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/code/nick088/real-esrgan-pytorch-inference-web-ui)
-- [NO UI ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/code/nick088/real-esrgan-pytorch-inference-no-ui)
-  
+- [WEB UI **(WARNING: YOU COULD RISK YOUR KAGGLE ACCOUNT)** ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)](https://github.com/Nick088Official/Real-ESRGAN_Pytorch/blob/main/kaggle-real-esrgan-pytorch-inference-web-ui.ipynb)
+- [NO UI ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)](https://github.com/Nick088Official/Real-ESRGAN_Pytorch/blob/main/kaggle-real-esrgan-pytorch-inference-no-ui.ipynb)
+
+1. Download one of the 2 Kaggle Notebooks Files above
+2. Go on https://kaggle.com.
+3. Click the '+', then 'Create new notebook'.
+4. Click 'File' and 'Import Notebook'.
+5. Import the kaggle notebook file.
+
 
 ### CHANGELOG
+#### Update - June 19th, 2024
+Kaggle Notebooks files.
 #### Update - May 3rd, 2024
 Updated & Fixed the no ui version and added a kaggle notebook too, everything is fixed now.
 #### Update - May 3rd, 2024
