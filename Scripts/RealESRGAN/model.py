@@ -13,7 +13,7 @@ from .utils import pad_reflect, split_image_into_overlapping_patches, stich_toge
 
 HF_MODELS = {
     2: dict(
-        repo_id='ai-forever/Real-ESRGAN',
+        repo_name='ai-forever/Real-ESRGAN',
         filename='RealESRGAN_x2.pth',
     ),
     4: dict(
